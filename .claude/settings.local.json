@@ -55,7 +55,10 @@
       "Bash(ffmpeg -y -i dad.png -c:v libwebp -quality 80 -lossless 0 dad.webp -hide_banner -loglevel error)",
       "Bash(ffmpeg -y -i logo.png -c:v libwebp -quality 80 -lossless 0 logo.webp -hide_banner -loglevel error)",
       "Bash(rm -f *.png *.jpg)",
-      "Bash(ls *.webp)"
+      "Bash(ls *.webp)",
+      "Bash(sed -i:*)",
+      "Bash(sed -i '/mascot\\\\.png/d' contact.html)",
+      "Bash(sed -i '/mascot\\\\.png/d' schedule.html)"
     ]
   }
 }
