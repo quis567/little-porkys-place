@@ -47,15 +47,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  contain: strict;
 }
 .ember {
   position: absolute;
   border-radius: 50%;
   background: radial-gradient(circle, var(--ember-core, rgba(255,200,100,1)), var(--ember-mid, rgba(255,140,50,.8)) 40%, var(--ember-rim, rgba(209,88,56,.5)) 65%, transparent 80%);
-  box-shadow: 0 0 var(--glow, 8px) var(--ember-core, rgba(255,180,80,.7));
   opacity: 0;
   animation: ember-float var(--dur, 8s) var(--delay, 0s) linear infinite;
   will-change: transform, opacity;
+  contain: layout style;
 }
 @keyframes ember-float {
   0%   { transform: translateY(0) scale(.6); opacity: 0; }
@@ -145,9 +146,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   transition: all .3s var(--ease);
 }
 .nav.is-scrolled {
-  background: rgba(20, 12, 8, .85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(20, 12, 8, .92);
   padding: 12px 0;
   border-bottom: 1px solid rgba(209,88,56,.15);
 }
@@ -335,6 +334,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   opacity: .55;
   transition: opacity .6s var(--ease);
   pointer-events: none;
+  will-change: opacity;
 }
 .hero__truck-wrap:hover .hero__glow { opacity: 1; }
 
@@ -363,18 +363,13 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   height: 100%;
   object-fit: contain;
   z-index: 2;
-  filter:
-    drop-shadow(0 2px 0 rgba(0,0,0,.4))
-    drop-shadow(0 18px 22px rgba(0,0,0,.55))
-    drop-shadow(0 40px 50px rgba(0,0,0,.45));
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.55));
   transition: transform .4s var(--ease), filter .4s var(--ease);
 }
 .hero__truck-wrap:hover .hero__truck {
   transform: translateY(-4px) scale(1.01);
   filter:
-    drop-shadow(0 2px 0 rgba(0,0,0,.4))
-    drop-shadow(0 18px 22px rgba(0,0,0,.55))
-    drop-shadow(0 40px 50px rgba(0,0,0,.45))
+    drop-shadow(0 18px 30px rgba(0,0,0,.55))
     drop-shadow(0 0 35px rgba(209,88,56,.45));
 }
 
@@ -399,6 +394,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   animation: smoke-rise var(--dur,7s) linear infinite;
   animation-delay: var(--delay,0s);
   will-change: transform, opacity;
+  contain: layout style;
 }
 @keyframes smoke-rise {
   0%   { transform: translate(0, 0) scale(.35); opacity: 0; }
@@ -937,6 +933,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   padding: 40px 24px;
   animation: gallery-scroll 40s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 .gallery__item {
   margin: 0;

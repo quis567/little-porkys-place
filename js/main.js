@@ -27,7 +27,7 @@
   const truckWrap  = document.getElementById('truckWrap');
 
   const mobile = window.matchMedia('(max-width: 720px)').matches;
-  const PARTICLE_COUNT = prefersReduced ? 0 : (mobile ? 8 : 15);
+  const PARTICLE_COUNT = prefersReduced ? 0 : (mobile ? 5 : 10);
 
   const rand = (min, max) => Math.random() * (max - min) + min;
 
@@ -53,21 +53,15 @@
   };
   buildSmoke();
 
-  /* ---- Parallax on smoke (subtle) ---- */
+  /* ---- Pause smoke when hero is off-screen ---- */
   if (!prefersReduced && smokeField) {
-    let lastY = 0, ticking = false;
-    const parallax = () => {
-      const y = window.scrollY;
-      const rect = smokeField.getBoundingClientRect();
-      if (rect.bottom > 0 && rect.top < window.innerHeight) {
-        smokeField.style.transform = `translateY(${y * -0.15}px)`;
-      }
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      lastY = window.scrollY;
-      if (!ticking) { requestAnimationFrame(parallax); ticking = true; }
-    }, { passive: true });
+    const smokeIO = new IntersectionObserver(([entry]) => {
+      smokeField.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      smokeField.querySelectorAll('.smoke-particle').forEach(p => {
+        p.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0 });
+    smokeIO.observe(truckWrap);
   }
 
   /* ---- Sizzle burst on hover/tap ---- */
@@ -143,6 +137,15 @@
   }, { threshold: 0.4 });
   counters.forEach(el => countIO.observe(el));
 
+  /* ---- Pause gallery animation off-screen ---- */
+  const galleryTrack = document.querySelector('.gallery__track');
+  if (galleryTrack) {
+    const galleryIO = new IntersectionObserver(([entry]) => {
+      galleryTrack.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+    }, { threshold: 0 });
+    galleryIO.observe(galleryTrack.parentElement);
+  }
+
   /* ---- Serving window toggles on click ---- */
   const servingWindow = document.getElementById('servingWindow');
   if (servingWindow) {
@@ -154,7 +157,7 @@
   /* ---- Floating ember particles (site-wide) ---- */
   if (!prefersReduced) {
     const emberCanvas = document.getElementById('emberCanvas');
-    const EMBER_COUNT = mobile ? 20 : 42;
+    const EMBER_COUNT = mobile ? 10 : 20;
     for (let i = 0; i < EMBER_COUNT; i++) {
       const e = document.createElement('div');
       e.className = 'ember';
@@ -165,7 +168,6 @@
       const rise = rand(-500, -1000);
       const peak = rand(.45, .85);
       const hue  = rand(0, 45);
-      const glow = Math.round(size * 1.2);
       e.style.cssText = `
         width:${size}px; height:${size}px;
         left:${left}%;
@@ -174,7 +176,6 @@
         --delay:${delay}s;
         --rise:${rise}px;
         --peak:${peak};
-        --glow:${glow}px;
         --ember-core: hsla(${hue},100%,72%,1);
         --ember-mid: hsla(${hue},95%,55%,.85);
         --ember-rim: hsla(${hue},80%,42%,.5);
