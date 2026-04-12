@@ -66,7 +66,8 @@
         <h2>Request a Quote</h2>
         <p class="inquiry__intro">Looking for <strong>BBQ catering on Long Island</strong>? Little Porky's Place brings our <strong>24-foot mobile food kitchen</strong> directly to your event — fully staffed with a grillmaster, all equipment, and our famous authentic meats. Whether you're planning a <strong>backyard party, wedding reception, corporate lunch, or festival</strong>, we handle everything from setup to service. Tell us about your event below and we'll get back to you within 24 hours with a custom quote.</p>
 
-        <form class="inquiry__form" id="inquiryForm" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='Sent!'; setTimeout(()=>this.reset(),1500); setTimeout(()=>this.querySelector('.btn').textContent='Send Inquiry',2000);">
+        <form class="inquiry__form" id="inquiryForm" name="quote-request" method="POST" data-netlify="true" action="/success.html">
+          <input type="hidden" name="form-name" value="quote-request" />
           <div class="form-row">
             <label><span>Name *</span><input type="text" name="name" required placeholder="Your name" /></label>
             <label><span>Phone</span><input type="tel" name="phone" placeholder="(631) 555-0000" /></label>
