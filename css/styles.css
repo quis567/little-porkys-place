@@ -1484,6 +1484,20 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+.schedule-page__intro {
+  color: var(--c-smoke);
+  font-size: 1.05rem;
+  max-width: 780px;
+  margin: 0 0 50px;
+  line-height: 1.7;
+}
+.schedule-page__intro a { color: var(--c-amber); text-decoration: underline; }
+.schedule-page__note {
+  color: var(--c-muted);
+  font-size: .9rem;
+  line-height: 1.7;
+  margin: 0 0 40px;
+}
 .schedule-page__cta {
   text-align: center;
   padding: 50px 0 0;
