@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Little Porky's Place — slow-smoked BBQ food truck serving Long Island. Catering, parties, and special events." />
+<title>Little Porky's Place — Slow-Smoked BBQ on Wheels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#home" class="nav__brand">
+      <img src="assets/images/mascot.png" alt="" class="nav__brand-mascot" />
+      <span class="nav__brand-text">Little Porky's Place</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#find">Find Us</a>
+      <a href="#about">About</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:6316673976" class="nav__phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(631) 667-3976</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow">Welcome to</span>
+      <h1 class="hero__title">Little Porky's<br><span>Place</span></h1>
+      <p class="hero__sub">Slow-smoked BBQ that comes to you.<br>Catering, parties, and events across Long Island.</p>
+      <div class="hero__cta">
+        <a href="#menu" class="btn btn--amber">See Our Menu</a>
+        <a href="#book" class="btn btn--ghost">Book the Truck</a>
+      </div>
+      <ul class="hero__badges">
+        <li>BBQ's</li><li>Parties</li><li>Catering</li><li>Special Events</li>
+      </ul>
+    </div>
+
+    <div class="hero__truck-wrap" id="truckWrap">
+      <div class="hero__glow"></div>
+      <div class="hero__smoke" id="smokeField" aria-hidden="true"></div>
+      <img src="assets/images/truck.png" alt="Little Porky's Place food truck" class="hero__truck" id="truckImg" />
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <span>SCROLL</span>
+    <div class="scroll-ind__arrow"></div>
+  </div>
+</section>
+
+<!-- ============ SPECIALS ============ -->
+<section class="specials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Off the Smoker</span>
+      <h2>Pit Favorites</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="specials__row" id="specialsRow">
+      <article class="special-card">
+        <div class="special-card__img has-photo" style="background-image:url('assets/images/pulled-pork.jpg')"></div>
+        <h3>Pulled Pork</h3>
+        <p>14 hours over hickory, piled high with tangy vinegar mop and slaw.</p>
+        <span class="price">Pit Favorite</span>
+      </article>
+      <article class="special-card">
+        <div class="special-card__img has-photo" style="background-image:url('assets/images/ribs.jpg')"></div>
+        <h3>St. Louis Ribs</h3>
+        <p>Fall-off-the-bone St. Louis cut ribs glazed in Porky's sauce.</p>
+        <span class="price">Add-On</span>
+      </article>
+      <article class="special-card">
+        <div class="special-card__img has-photo" style="background-image:url('assets/images/kabobs.jpg')"></div>
+        <h3>BBQ Chicken</h3>
+        <p>Grilled over open flame, brushed with smoky amber glaze.</p>
+        <span class="price">Crowd Pleaser</span>
+      </article>
+      <article class="special-card">
+        <div class="special-card__img has-photo" style="background-image:url('assets/images/platter.jpg')"></div>
+        <h3>The Porky Platter</h3>
+        <p>Grilled meats, sausage, and fresh sides — straight off the pit.</p>
+        <span class="price">Signature</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Straight from the Pit</span>
+      <h2>Catering Packages</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Per-person pricing. All packages include paper goods, condiments, and a grillmaster on site.</p>
+    </div>
+
+    <div class="packages">
+      <article class="pkg">
+        <div class="pkg__img" style="background-image:url('assets/images/burger.jpg')"></div>
+        <div class="pkg__body">
+          <span class="pkg__eyebrow">Mini</span>
+          <h3>All American Mini BBQ</h3>
+          <p>Grilled chicken, hot dogs, hamburgers, and cheeseburgers on Martin's potato rolls with lettuce, tomato, pickle, and onion. Pick any 3 sides.</p>
+          <ul class="pkg__sides">
+            <li>Homemade Mac Salad</li><li>Potato Salad</li><li>Coleslaw</li>
+            <li>Tri-Color Pasta</li><li>Bean Salad</li><li>Corn on the Cob</li>
+            <li>Mixed Greens</li><li>Chip Bags</li>
+          </ul>
+          <div class="pkg__pricing">
+            <div><strong>$21.99</strong><span>50–99 pp</span></div>
+            <div><strong>$20.99</strong><span>100–199 pp</span></div>
+            <div><strong>$19.99</strong><span>200–499 pp</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pkg pkg--featured">
+        <div class="pkg__img" style="background-image:url('assets/images/ribs.jpg')"></div>
+        <div class="pkg__body">
+          <span class="pkg__eyebrow">Most Popular</span>
+          <h3>All American Standard</h3>
+          <p>Hot dogs, burgers, cheeseburgers on Martin's rolls, BBQ chicken, and Long Island corn. Choose 1: pulled pork sliders or sausage with peppers &amp; onions. Pick 3 sides. Dessert included.</p>
+          <ul class="pkg__sides">
+            <li>Pulled Pork Sliders</li><li>Sausage &amp; Peppers</li><li>Long Island Corn</li>
+            <li>Fresh Fruit Bowl</li><li>Chocolate Chunk Cookies</li>
+          </ul>
+          <div class="pkg__pricing">
+            <div><strong>$26.95</strong><span>50–99 pp</span></div>
+            <div><strong>$25.95</strong><span>100–199 pp</span></div>
+            <div><strong>$24.95</strong><span>200–499 pp</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pkg">
+        <div class="pkg__img" style="background-image:url('assets/images/grill-steaks.jpg')"></div>
+        <div class="pkg__body">
+          <span class="pkg__eyebrow">Deluxe</span>
+          <h3>All American Deluxe</h3>
+          <p>Everything in the Standard — plus marinated flank steak. Includes garden salad and tri-color pasta salad. A true showstopper.</p>
+          <ul class="pkg__sides">
+            <li>Marinated Flank Steak</li><li>BBQ Chicken</li><li>Long Island Corn</li>
+            <li>Garden Salad</li><li>Tri-Color Pasta</li>
+          </ul>
+          <div class="pkg__pricing">
+            <div><strong>$26.95</strong><span>50–99 pp</span></div>
+            <div><strong>$25.95</strong><span>100–199 pp</span></div>
+            <div><strong>$24.95</strong><span>200–499 pp</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="pkg__note">Grillmaster $170 + $40/additional hour · Buffet Server $150 + $40/additional hour · 3-hour minimum (1 hour setup, 2 hours service)</p>
+
+    <div class="section-head section-head--tight">
+      <span class="eyebrow">Make It Yours</span>
+      <h3 class="addons__title">Add-Ons <small>per person</small></h3>
+    </div>
+
+    <div class="addons">
+      <div class="addon-group">
+        <h4>Beef</h4>
+        <ul>
+          <li><span>St. Louis BBQ Ribs</span><em>$4.75</em></li>
+          <li><span>Baby Back Ribs</span><em>$4.50</em></li>
+          <li><span>Filet Mignon</span><em>$9.00</em></li>
+          <li><span>NY Strip Steak</span><em>$7.00</em></li>
+          <li><span>Flank Steak</span><em>$6.00</em></li>
+          <li><span>Skirt Steak</span><em>$5.50</em></li>
+          <li><span>BBQ Beef Brisket</span><em>$6.00</em></li>
+          <li><span>Cheesesteak</span><em>$5.50</em></li>
+        </ul>
+      </div>
+      <div class="addon-group">
+        <h4>Pork &amp; Chicken</h4>
+        <ul>
+          <li><span>Sweet / Hot Sausage</span><em>$4.00</em></li>
+          <li><span>Pulled Pork</span><em>$4.00</em></li>
+          <li><span>Pork Tenderloin</span><em>$3.00</em></li>
+          <li><span>Whole Pig (35 lbs)</span><em>Market</em></li>
+          <li><span>Barbecue Chicken</span><em>$3.50</em></li>
+          <li><span>Chicken Wings</span><em>$3.50</em></li>
+        </ul>
+      </div>
+      <div class="addon-group">
+        <h4>Seafood</h4>
+        <ul>
+          <li><span>Jumbo Shrimp</span><em>$7.00</em></li>
+          <li><span>Jamaican Jerk Shrimp</span><em>$7.00</em></li>
+          <li><span>Scallops</span><em>$7.00</em></li>
+          <li><span>Mussels</span><em>$4.00</em></li>
+          <li><span>Baked Clams</span><em>$4.00</em></li>
+          <li><span>Lobster</span><em>Market</em></li>
+        </ul>
+      </div>
+      <div class="addon-group">
+        <h4>Sides &amp; Pasta</h4>
+        <ul>
+          <li><span>Mac &amp; Cheese</span><em>$2.50</em></li>
+          <li><span>Penne ala Vodka</span><em>$2.50</em></li>
+          <li><span>Grilled Vegetables</span><em>$3.00</em></li>
+          <li><span>Mashed Potatoes</span><em>$1.50</em></li>
+          <li><span>Creamed Spinach</span><em>$1.50</em></li>
+          <li><span>Chili</span><em>$4.50</em></li>
+          <li><span>Cornbread</span><em>$1.25</em></li>
+        </ul>
+      </div>
+      <div class="addon-group">
+        <h4>Beverages</h4>
+        <ul>
+          <li><span>Soda &amp; Water</span><em>$3.00</em></li>
+          <li><span>Coffee &amp; Tea</span><em>$3.00</em></li>
+          <li><span>Bar Service</span><em>Market</em></li>
+        </ul>
+        <p class="addon-group__note">Alcoholic beverages require 21 days advance notice for a one-day liquor license.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" aria-label="At the truck">
+  <div class="gallery__track">
+    <figure class="gallery__item"><img src="assets/images/at-truck-1.jpg" alt="Guests ordering at the food truck" loading="lazy" /></figure>
+    <figure class="gallery__item"><img src="assets/images/sandwich.jpg" alt="Pulled pork sandwich being plated" loading="lazy" /></figure>
+    <figure class="gallery__item"><img src="assets/images/pork-meat.jpg" alt="Smoked pork on the pit" loading="lazy" /></figure>
+    <figure class="gallery__item"><img src="assets/images/at-truck-2.jpg" alt="Friends laughing at the food truck" loading="lazy" /></figure>
+    <figure class="gallery__item"><img src="assets/images/veggies-meat.jpg" alt="Grilled vegetables and meat" loading="lazy" /></figure>
+    <figure class="gallery__item"><img src="assets/images/street-food.jpg" alt="Street-style BBQ spread" loading="lazy" /></figure>
+    <figure class="gallery__item" aria-hidden="true"><img src="assets/images/at-truck-1.jpg" alt="" loading="lazy" /></figure>
+    <figure class="gallery__item" aria-hidden="true"><img src="assets/images/sandwich.jpg" alt="" loading="lazy" /></figure>
+    <figure class="gallery__item" aria-hidden="true"><img src="assets/images/pork-meat.jpg" alt="" loading="lazy" /></figure>
+    <figure class="gallery__item" aria-hidden="true"><img src="assets/images/at-truck-2.jpg" alt="" loading="lazy" /></figure>
+    <figure class="gallery__item" aria-hidden="true"><img src="assets/images/veggies-meat.jpg" alt="" loading="lazy" /></figure>
+    <figure class="gallery__item" aria-hidden="true"><img src="assets/images/street-food.jpg" alt="" loading="lazy" /></figure>
+  </div>
+</section>
+
+<!-- ============ FIND US ============ -->
+<section class="find" id="find">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Follow the Smoke</span>
+      <h2>Find the Truck</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Follow the smoke. Find the pork.</p>
+    </div>
+
+    <div class="find__layout">
+      <div class="schedule">
+        <article class="schedule-card">
+          <div class="schedule-card__date"><span>APR</span><strong>12</strong></div>
+          <div class="schedule-card__info"><h3>Smithtown</h3><p>Main Street Plaza · 123 Main St</p><span>11:00 AM – 8:00 PM</span></div>
+        </article>
+        <article class="schedule-card">
+          <div class="schedule-card__date"><span>APR</span><strong>15</strong></div>
+          <div class="schedule-card__info"><h3>Huntington</h3><p>Heckscher Park · 2 Prime Ave</p><span>12:00 PM – 9:00 PM</span></div>
+        </article>
+        <article class="schedule-card">
+          <div class="schedule-card__date"><span>APR</span><strong>18</strong></div>
+          <div class="schedule-card__info"><h3>Babylon</h3><p>Argyle Lake · Montauk Hwy</p><span>11:00 AM – 7:00 PM</span></div>
+        </article>
+        <article class="schedule-card">
+          <div class="schedule-card__date"><span>APR</span><strong>22</strong></div>
+          <div class="schedule-card__info"><h3>Islip</h3><p>Town Hall Lot · 655 Main St</p><span>11:00 AM – 8:00 PM</span></div>
+        </article>
+        <article class="schedule-card">
+          <div class="schedule-card__date"><span>APR</span><strong>25</strong></div>
+          <div class="schedule-card__info"><h3>Bay Shore</h3><p>Maple Ave Park</p><span>12:00 PM – 9:00 PM</span></div>
+        </article>
+        <article class="schedule-card">
+          <div class="schedule-card__date"><span>APR</span><strong>29</strong></div>
+          <div class="schedule-card__info"><h3>Patchogue</h3><p>Shorefront Park</p><span>11:00 AM – 8:00 PM</span></div>
+        </article>
+      </div>
+
+      <div class="find__map">
+        <iframe
+          class="map-embed"
+          src="https://maps.google.com/maps?q=100%20Vanderbilt%20Motor%20Parkway%2C%20Hauppauge%2C%20NY%2011788&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+          title="Little Porky's Place on Google Maps"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__media">
+        <div class="about__photo has-photo" style="background-image:url('assets/images/smoker.jpg')"></div>
+        <img src="assets/images/mascot.png" alt="Little Porky mascot" class="about__mascot" />
+      </div>
+      <div class="about__text">
+        <span class="eyebrow">Our Story</span>
+        <h2>The Story Behind<br>the Smoke</h2>
+        <div class="divider divider--left"></div>
+        <p>It started with a backyard smoker, a family recipe passed down three generations, and the kind of stubbornness that says "I can do this better." A few hundred pounds of pork shoulder later, Little Porky's Place hit the road.</p>
+        <p>We don't rush anything. Our brisket goes 14 hours low-and-slow. Our ribs get a dry rub nap overnight. Our sauce simmers until it's thick enough to stand a spoon in. It's the way our grandfather made it, and the way we'll keep making it.</p>
+        <p>Now we bring that same obsession to BBQs, weddings, corporate events, and every Long Island parking lot brave enough to smell like hickory for a day.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><strong data-count="5000">0</strong><span>Sandwiches Served</span></div>
+      <div class="stat"><strong data-count="50">0</strong><span>Events Catered</span></div>
+      <div class="stat"><strong data-count="14">0</strong><span>Hours per Brisket</span></div>
+      <div class="stat"><strong data-count="1">0</strong><span>Obsession: BBQ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section class="book" id="book">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Bring the Smoke to You</span>
+      <h2>Book Little Porky's</h2>
+      <div class="divider"></div>
+      <p class="section-sub">BBQ's · Parties · Catering · Special Events</p>
+    </div>
+
+    <div class="book__cards">
+      <article class="book-card">
+        <div class="book-card__icon">🏡</div>
+        <h3>Private Parties</h3>
+        <p>Backyard BBQ? We'll bring the smoke.</p>
+        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
+      </article>
+      <article class="book-card">
+        <div class="book-card__icon">💼</div>
+        <h3>Corporate Events</h3>
+        <p>Feed the whole office right.</p>
+        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
+      </article>
+      <article class="book-card">
+        <div class="book-card__icon">💍</div>
+        <h3>Weddings</h3>
+        <p>Love, vows, and pulled pork.</p>
+        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
+      </article>
+      <article class="book-card">
+        <div class="book-card__icon">🎪</div>
+        <h3>Festivals & Fairs</h3>
+        <p>We show up. Crowds show up.</p>
+        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
+      </article>
+    </div>
+
+    <form class="book__form" id="bookForm" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch soon.');">
+      <div class="form-row">
+        <label><span>Name</span><input type="text" required placeholder="Your name" /></label>
+        <label><span>Email</span><input type="email" required placeholder="you@email.com" /></label>
+      </div>
+      <div class="form-row">
+        <label><span>Event Date</span><input type="date" required /></label>
+        <label><span>Event Type</span>
+          <select required>
+            <option value="">Select one…</option>
+            <option>Private Party</option>
+            <option>Corporate</option>
+            <option>Wedding</option>
+            <option>Festival / Fair</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <label><span>Message</span><textarea rows="4" placeholder="Tell us about your event…"></textarea></label>
+      <button type="submit" class="btn btn--amber">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Say Hello</span>
+      <h2>Get in Touch</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact__grid">
+      <a href="tel:6316673976" class="contact-card">
+        <div class="contact-card__icon">📞</div>
+        <span>Call Us</span>
+        <strong>631.667.3976</strong>
+      </a>
+      <a href="mailto:info@littleporkysplace.com" class="contact-card">
+        <div class="contact-card__icon">✉️</div>
+        <span>Email</span>
+        <strong>info@littleporkysplace.com</strong>
+      </a>
+      <a href="https://maps.google.com/?q=100+Vanderbilt+Motor+Parkway+Hauppauge+NY+11788" class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-card__icon">📍</div>
+        <span>Visit the Café</span>
+        <strong>100 Vanderbilt Motor Pkwy<br>Hauppauge, NY 11788</strong>
+      </a>
+      <div class="contact-card">
+        <div class="contact-card__icon">🕒</div>
+        <span>Café Hours</span>
+        <strong>Mon–Fri 8am – 3pm<br>Sat &amp; Sun by appt</strong>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card__icon">📱</div>
+        <span>Follow</span>
+        <div class="contact-card__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <img src="assets/images/truck.png" alt="" class="footer__truck" />
+    <div class="footer__tagline">IT'S TRUCKING GOOD!</div>
+    <div class="footer__social">
+      <a href="#">Instagram</a>
+      <span>·</span>
+      <a href="#">Facebook</a>
+    </div>
+    <div class="footer__meta">
+      <span>&copy; 2026 Little Porky's Place. All rights reserved.</span>
+      <span>Site by <a href="https://truepathstudios.com">TruePath Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="ember-canvas" id="emberCanvas" aria-hidden="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
