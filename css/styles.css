@@ -978,9 +978,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-height: 560px;
-  overflow-y: auto;
-  padding-right: 10px;
+}
+.find__view-all {
+  align-self: flex-start;
+  margin-top: 10px;
 }
 .schedule::-webkit-scrollbar { width: 6px; }
 .schedule::-webkit-scrollbar-track { background: transparent; }
@@ -1462,6 +1463,44 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
 
 .nav__links .is-current { color: var(--c-amber); }
 
+/* ============ SCHEDULE PAGE ============ */
+.schedule-page {
+  padding: 80px 0 100px;
+  background: var(--c-bg);
+}
+.schedule-page__month {
+  margin-bottom: 60px;
+}
+.schedule-page__month h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--c-amber);
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--c-char);
+}
+.schedule-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.schedule-page__cta {
+  text-align: center;
+  padding: 50px 0 0;
+  border-top: 1px solid var(--c-char);
+}
+.schedule-page__cta p {
+  font-family: var(--font-accent);
+  font-size: 16px;
+  letter-spacing: .2em;
+  color: var(--c-muted);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+@media (max-width: 720px) {
+  .schedule-page__grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 980px) {
   .inquiry__grid { grid-template-columns: 1fr; gap: 40px; }
   .inquiry__sidebar { position: static; }
@@ -1543,6 +1582,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   .packages { grid-template-columns: 1fr; }
   .gallery__item { width: 280px; height: 190px; }
   .find__layout { grid-template-columns: 1fr; }
+  .find__view-all { align-self: center; }
   .find__map { position: static; }
   .map-embed { aspect-ratio: 16/10; }
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
