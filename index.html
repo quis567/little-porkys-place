@@ -24,8 +24,7 @@
       <a href="#menu">Menu</a>
       <a href="#find">Find Us</a>
       <a href="#about">About</a>
-      <a href="#book">Book</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Book / Contact</a>
     </nav>
     <a href="tel:6316673976" class="nav__phone">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -46,7 +45,7 @@
       <p class="hero__sub">Slow-smoked BBQ that comes to you.<br>Catering, parties, and events across Long Island.</p>
       <div class="hero__cta">
         <a href="#menu" class="btn btn--amber">See Our Menu</a>
-        <a href="#book" class="btn btn--ghost">Book the Truck</a>
+        <a href="contact.html" class="btn btn--ghost">Book the Truck</a>
       </div>
       <ul class="hero__badges">
         <li>BBQ's</li><li>Parties</li><li>Catering</li><li>Special Events</li>
@@ -64,6 +63,7 @@
     <span>SCROLL</span>
     <div class="scroll-ind__arrow"></div>
   </div>
+
 </section>
 
 <!-- ============ SPECIALS ============ -->
@@ -320,9 +320,22 @@
         <span class="eyebrow">Our Story</span>
         <h2>The Story Behind<br>the Smoke</h2>
         <div class="divider divider--left"></div>
-        <p>It started with a backyard smoker, a family recipe passed down three generations, and the kind of stubbornness that says "I can do this better." A few hundred pounds of pork shoulder later, Little Porky's Place hit the road.</p>
-        <p>We don't rush anything. Our brisket goes 14 hours low-and-slow. Our ribs get a dry rub nap overnight. Our sauce simmers until it's thick enough to stand a spoon in. It's the way our grandfather made it, and the way we'll keep making it.</p>
-        <p>Now we bring that same obsession to BBQs, weddings, corporate events, and every Long Island parking lot brave enough to smell like hickory for a day.</p>
+        <p>Little Porky's Place started the way all great things do — in a backyard, with a man who refused to cut corners. For decades, our founder spent nights perfecting his rubs, sauces, and marinades. Every recipe was developed through years of trial, taste, and obsession. He never wrote them down for anyone. Never shared them. If you wanted to taste it, you had to come to him.</p>
+        <p>That same secrecy is what makes every bite from our truck special. The dry rubs are hand-blended from recipes that exist nowhere else. The sauces are simmered low until they're thick enough to stand a spoon in. The brisket goes 14 hours over hickory because that's the only way he'd allow it to be served.</p>
+        <p>Now those guarded family recipes travel across Long Island — to your backyard, your wedding, your company picnic, and every event worth firing up the smoker for. The secret's still safe. You just get to taste it.</p>
+      </div>
+    </div>
+
+    <div class="serving-window-wrap">
+      <div class="serving-window" id="servingWindow">
+        <div class="serving-window__interior">
+          <div class="serving-window__glow"></div>
+          <img src="assets/images/dad.png" alt="The pit master" class="serving-window__dad" />
+        </div>
+        <div class="serving-window__shutter">
+          <span class="serving-window__label">ORDER HERE</span>
+        </div>
+        <div class="serving-window__ledge"></div>
       </div>
     </div>
 
@@ -335,104 +348,18 @@
   </div>
 </section>
 
-<!-- ============ BOOK ============ -->
-<section class="book" id="book">
+<!-- ============ BOOK CTA ============ -->
+<section class="book-cta" id="book">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Bring the Smoke to You</span>
-      <h2>Book Little Porky's</h2>
+      <h2>Ready to Book?</h2>
       <div class="divider"></div>
       <p class="section-sub">BBQ's · Parties · Catering · Special Events</p>
     </div>
-
-    <div class="book__cards">
-      <article class="book-card">
-        <div class="book-card__icon">🏡</div>
-        <h3>Private Parties</h3>
-        <p>Backyard BBQ? We'll bring the smoke.</p>
-        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
-      </article>
-      <article class="book-card">
-        <div class="book-card__icon">💼</div>
-        <h3>Corporate Events</h3>
-        <p>Feed the whole office right.</p>
-        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
-      </article>
-      <article class="book-card">
-        <div class="book-card__icon">💍</div>
-        <h3>Weddings</h3>
-        <p>Love, vows, and pulled pork.</p>
-        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
-      </article>
-      <article class="book-card">
-        <div class="book-card__icon">🎪</div>
-        <h3>Festivals & Fairs</h3>
-        <p>We show up. Crowds show up.</p>
-        <a href="#bookForm" class="btn btn--ghost btn--sm">Inquire</a>
-      </article>
-    </div>
-
-    <form class="book__form" id="bookForm" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch soon.');">
-      <div class="form-row">
-        <label><span>Name</span><input type="text" required placeholder="Your name" /></label>
-        <label><span>Email</span><input type="email" required placeholder="you@email.com" /></label>
-      </div>
-      <div class="form-row">
-        <label><span>Event Date</span><input type="date" required /></label>
-        <label><span>Event Type</span>
-          <select required>
-            <option value="">Select one…</option>
-            <option>Private Party</option>
-            <option>Corporate</option>
-            <option>Wedding</option>
-            <option>Festival / Fair</option>
-            <option>Other</option>
-          </select>
-        </label>
-      </div>
-      <label><span>Message</span><textarea rows="4" placeholder="Tell us about your event…"></textarea></label>
-      <button type="submit" class="btn btn--amber">Send Inquiry</button>
-    </form>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Say Hello</span>
-      <h2>Get in Touch</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="contact__grid">
-      <a href="tel:6316673976" class="contact-card">
-        <div class="contact-card__icon">📞</div>
-        <span>Call Us</span>
-        <strong>631.667.3976</strong>
-      </a>
-      <a href="mailto:info@littleporkysplace.com" class="contact-card">
-        <div class="contact-card__icon">✉️</div>
-        <span>Email</span>
-        <strong>info@littleporkysplace.com</strong>
-      </a>
-      <a href="https://maps.google.com/?q=100+Vanderbilt+Motor+Parkway+Hauppauge+NY+11788" class="contact-card" target="_blank" rel="noopener">
-        <div class="contact-card__icon">📍</div>
-        <span>Visit the Café</span>
-        <strong>100 Vanderbilt Motor Pkwy<br>Hauppauge, NY 11788</strong>
-      </a>
-      <div class="contact-card">
-        <div class="contact-card__icon">🕒</div>
-        <span>Café Hours</span>
-        <strong>Mon–Fri 8am – 3pm<br>Sat &amp; Sun by appt</strong>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card__icon">📱</div>
-        <span>Follow</span>
-        <div class="contact-card__social">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-        </div>
-      </div>
+    <div class="book-cta__actions">
+      <a href="contact.html" class="btn btn--amber btn--lg">Get a Free Quote</a>
+      <a href="tel:6316673976" class="btn btn--ghost btn--lg">Call (631) 667-3976</a>
     </div>
   </div>
 </section>

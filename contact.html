@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Book Little Porky's Place for your next event — BBQ catering for parties, weddings, corporate events, and festivals across Long Island." />
+<title>Book the Truck — Little Porky's Place</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav is-scrolled" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/images/mascot.png" alt="" class="nav__brand-mascot" />
+      <span class="nav__brand-text">Little Porky's Place</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#find">Find Us</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html" class="is-current">Book / Contact</a>
+    </nav>
+    <a href="tel:6316673976" class="nav__phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(631) 667-3976</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Bring the Smoke to You</span>
+    <h1 class="page-header__title">Book the Truck</h1>
+    <p class="page-header__sub">BBQ's · Parties · Catering · Special Events</p>
+  </div>
+</section>
+
+<!-- ============ BOOKING FORM ============ -->
+<section class="inquiry" id="inquiry">
+  <div class="container">
+    <div class="inquiry__grid">
+
+      <div class="inquiry__form-wrap">
+        <h2>Request a Quote</h2>
+        <p class="inquiry__intro">Tell us about your event and we'll get back to you within 24 hours with a custom quote.</p>
+
+        <form class="inquiry__form" id="inquiryForm" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='Sent!'; setTimeout(()=>this.reset(),1500); setTimeout(()=>this.querySelector('.btn').textContent='Send Inquiry',2000);">
+          <div class="form-row">
+            <label><span>Name *</span><input type="text" name="name" required placeholder="Your name" /></label>
+            <label><span>Phone</span><input type="tel" name="phone" placeholder="(631) 555-0000" /></label>
+          </div>
+          <div class="form-row">
+            <label><span>Email *</span><input type="email" name="email" required placeholder="you@email.com" /></label>
+            <label><span>Event Date *</span><input type="date" name="date" required /></label>
+          </div>
+          <div class="form-row">
+            <label><span>Event Type *</span>
+              <select name="event_type" required>
+                <option value="">Select one…</option>
+                <option>Private Party / Backyard BBQ</option>
+                <option>Corporate Event</option>
+                <option>Wedding</option>
+                <option>Festival / Fair</option>
+                <option>Fundraiser</option>
+                <option>Birthday Party</option>
+                <option>Graduation</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label><span>Estimated Guest Count</span>
+              <select name="guests">
+                <option value="">Approximate…</option>
+                <option>Under 50</option>
+                <option>50 – 99</option>
+                <option>100 – 199</option>
+                <option>200 – 499</option>
+                <option>500+</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label><span>Preferred Package</span>
+              <select name="package">
+                <option value="">Not sure yet</option>
+                <option>All American Mini BBQ</option>
+                <option>All American Standard</option>
+                <option>All American Deluxe</option>
+                <option>Custom / Other</option>
+              </select>
+            </label>
+            <label><span>Event Location</span><input type="text" name="location" placeholder="Address or venue name" /></label>
+          </div>
+          <label><span>Tell Us About Your Event</span><textarea name="message" rows="5" placeholder="What's the occasion? Any special requests, dietary needs, or questions?"></textarea></label>
+          <button type="submit" class="btn btn--amber">Send Inquiry</button>
+        </form>
+      </div>
+
+      <aside class="inquiry__sidebar">
+        <div class="inquiry__contact-block">
+          <h3>Get in Touch Directly</h3>
+          <a href="tel:6316673976" class="inquiry__contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><strong>(631) 667-3976</strong><span>Mon–Fri 8am – 3pm</span></div>
+          </a>
+          <a href="mailto:info@littleporkysplace.com" class="inquiry__contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div><strong>info@littleporkysplace.com</strong><span>We reply within 24 hours</span></div>
+          </a>
+          <a href="https://maps.google.com/?q=100+Vanderbilt+Motor+Parkway+Hauppauge+NY+11788" target="_blank" rel="noopener" class="inquiry__contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>100 Vanderbilt Motor Pkwy</strong><span>Hauppauge, NY 11788</span></div>
+          </a>
+        </div>
+
+        <div class="inquiry__services">
+          <h3>We Cater It All</h3>
+          <ul>
+            <li>Backyard BBQs</li>
+            <li>Corporate Events</li>
+            <li>Weddings &amp; Rehearsal Dinners</li>
+            <li>Birthday Parties</li>
+            <li>Graduations</li>
+            <li>Festivals &amp; Fairs</li>
+            <li>Fundraisers</li>
+            <li>Holiday Parties</li>
+          </ul>
+        </div>
+
+        <div class="inquiry__note">
+          <p>Our 24' mobile food kitchen can cater your next event right on premise. We take care of the great food, presentation, and service — from your menu to table arrangements.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP ============ -->
+<section class="inquiry-map">
+  <iframe
+    class="inquiry-map__embed"
+    src="https://maps.google.com/maps?q=100%20Vanderbilt%20Motor%20Parkway%2C%20Hauppauge%2C%20NY%2011788&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+    title="Little Porky's Place on Google Maps"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen></iframe>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <img src="assets/images/truck.png" alt="" class="footer__truck" />
+    <div class="footer__tagline">IT'S TRUCKING GOOD!</div>
+    <div class="footer__social">
+      <a href="#">Instagram</a>
+      <span>·</span>
+      <a href="#">Facebook</a>
+    </div>
+    <div class="footer__meta">
+      <span>&copy; 2026 Little Porky's Place. All rights reserved.</span>
+      <span>Site by <a href="https://truepathstudios.com">TruePath Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="ember-canvas" id="emberCanvas" aria-hidden="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

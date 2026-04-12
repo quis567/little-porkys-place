@@ -42,7 +42,14 @@
       "Bash(awk '{print \"Total:\", $1, \"KB\"}')",
       "Bash(gh auth:*)",
       "Bash(netlify status:*)",
-      "Read(//c/Users/msant/OneDrive/Desktop/Claude Code/Mission Control V2/**)"
+      "Read(//c/Users/msant/OneDrive/Desktop/Claude Code/Mission Control V2/**)",
+      "Bash(gh repo:*)",
+      "Bash(netlify sites:create --name little-porkys-place)",
+      "Bash(netlify deploy:*)",
+      "Bash(ffmpeg -i \"C:/Users/msant/OneDrive/Desktop/Claude Code/Portfolio Site 7/Images/dad.jpeg\")",
+      "Bash(ffmpeg -y -i \"Images/dad.jpeg\" -vf \"format=rgba,chromakey=0x3333AA:0.35:0.15,chromakey=0x4444CC:0.3:0.12,chromakey=0x2244AA:0.3:0.12,despill=type=blue:mix=0.7:expand=0.4\" \"assets/images/dad.png\")",
+      "Bash(ffmpeg -y -i \"Images/dad.jpeg\" -vf \"format=rgba,geq=r='r\\(X,Y\\)':g='g\\(X,Y\\)':b='b\\(X,Y\\)':a='if\\(gt\\(b\\(X,Y\\)-max\\(r\\(X,Y\\),g\\(X,Y\\)\\),25\\)*gt\\(b\\(X,Y\\),80\\), max\\(0, 255-\\(\\(b\\(X,Y\\)-max\\(r\\(X,Y\\),g\\(X,Y\\)\\)\\)-25\\)*8\\), 255\\)'\" \"assets/images/dad.png\")",
+      "Bash(ffmpeg -y -i \"Images/dad.jpeg\" -vf \"format=rgba,geq=r='r\\(X,Y\\)':g='g\\(X,Y\\)':b='b\\(X,Y\\)':a='if\\(gt\\(b\\(X,Y\\)-max\\(r\\(X,Y\\),g\\(X,Y\\)\\),20\\)*gt\\(b\\(X,Y\\),70\\), max\\(0, 255-\\(\\(b\\(X,Y\\)-max\\(r\\(X,Y\\),g\\(X,Y\\)\\)\\)-20\\)*10\\), 255\\)',despill=type=blue:mix=0.8:expand=0.5\" \"assets/images/dad.png\")"
     ]
   }
 }

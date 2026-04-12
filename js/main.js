@@ -32,6 +32,7 @@
   const rand = (min, max) => Math.random() * (max - min) + min;
 
   const buildSmoke = () => {
+    if (!smokeField) return;
     smokeField.innerHTML = '';
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const p = document.createElement('div');
@@ -53,7 +54,7 @@
   buildSmoke();
 
   /* ---- Parallax on smoke (subtle) ---- */
-  if (!prefersReduced) {
+  if (!prefersReduced && smokeField) {
     let lastY = 0, ticking = false;
     const parallax = () => {
       const y = window.scrollY;
@@ -71,14 +72,26 @@
 
   /* ---- Sizzle burst on hover/tap ---- */
   const burst = () => {
-    if (prefersReduced) return;
-    const b = document.createElement('div');
-    b.className = 'smoke-burst';
-    smokeField.appendChild(b);
-    setTimeout(() => b.remove(), 1000);
+    if (prefersReduced || !smokeField) return;
+    const count = rand(6, 10) | 0;
+    for (let i = 0; i < count; i++) {
+      const b = document.createElement('div');
+      b.className = 'smoke-burst';
+      const offsetX = rand(-60, 60);
+      const size = rand(150, 280);
+      b.style.left = `calc(40% + ${offsetX}px)`;
+      b.style.width = size + 'px';
+      b.style.height = size + 'px';
+      b.style.animationDelay = (i * 0.08) + 's';
+      b.style.animationDuration = rand(0.7, 1.3) + 's';
+      smokeField.appendChild(b);
+      setTimeout(() => b.remove(), 1500);
+    }
   };
-  truckWrap.addEventListener('mouseenter', burst);
-  truckWrap.addEventListener('click', burst);
+  if (truckWrap) {
+    truckWrap.addEventListener('mouseenter', burst);
+    truckWrap.addEventListener('click', burst);
+  }
 
   /* ---- Menu tabs ---- */
   const tabs = document.querySelectorAll('.menu__tab');
@@ -129,6 +142,14 @@
     });
   }, { threshold: 0.4 });
   counters.forEach(el => countIO.observe(el));
+
+  /* ---- Serving window toggles on click ---- */
+  const servingWindow = document.getElementById('servingWindow');
+  if (servingWindow) {
+    servingWindow.addEventListener('click', () => {
+      servingWindow.classList.toggle('is-open');
+    });
+  }
 
   /* ---- Floating ember particles (site-wide) ---- */
   if (!prefersReduced) {
