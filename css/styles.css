@@ -1775,6 +1775,23 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   margin: 8px 0 14px;
   line-height: 1;
 }
+.menu-card__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin: 8px 0 14px;
+}
+.menu-card__price-row .menu-card__price-tag { margin: 0; }
+.menu-card .card-subhead {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--c-amber);
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(62,42,30,.5);
+}
 .menu-card__price-tag small {
   font-family: var(--font-accent);
   font-size: 12px;
@@ -1906,6 +1923,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
   border-bottom: 1px solid rgba(62,42,30,.5);
 }
 .menu-detailed-list > li:last-child { border-bottom: none; }
+.menu-detailed-list--two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+}
+.menu-detailed-list--two-col > li:nth-last-child(2) { border-bottom: none; }
+@media (max-width: 720px) {
+  .menu-detailed-list--two-col { grid-template-columns: 1fr; }
+  .menu-detailed-list--two-col > li:nth-last-child(2) { border-bottom: 1px solid rgba(62,42,30,.5); }
+}
 .menu-detailed-list strong {
   display: block;
   color: var(--c-cream);
@@ -2054,6 +2081,113 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
 }
 
 .menu-cat--policies .menu-card p { color: var(--c-smoke); font-size: .93rem; line-height: 1.7; }
+
+/* ============ CATERING TAB GROUPS ============ */
+.cat-tabs-group { margin-top: 6px; }
+.cat-tabs {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--c-char);
+  margin-bottom: 30px;
+}
+.cat-tab {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  padding: 14px 22px;
+  position: relative;
+  transition: color .25s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.cat-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 14px; right: 14px;
+  height: 3px;
+  background: var(--c-amber);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .3s var(--ease);
+}
+.cat-tab:hover { color: var(--c-cream); }
+.cat-tab.is-active { color: var(--c-amber); }
+.cat-tab.is-active::after { transform: scaleX(1); }
+.cat-tab-panel { display: none; }
+.cat-tab-panel.is-active { display: block; animation: fade-up .5s var(--ease); }
+
+/* Number-tier tab strip (Hot Buffet by guest count) */
+.cat-tabs--tiers {
+  justify-content: flex-start;
+  gap: 6px;
+}
+.cat-tabs--tiers .cat-tab {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  padding: 12px 22px;
+  min-width: 64px;
+  text-align: center;
+}
+.cat-tabs--tiers .cat-tab::before {
+  content: 'For';
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 9px;
+  letter-spacing: .25em;
+  color: var(--c-muted);
+  margin-bottom: 2px;
+}
+.cat-tabs--tiers .cat-tab.is-active::before { color: var(--c-amber); }
+
+/* Mega tab strip — many tabs, smaller padding, wraps to multiple rows */
+.cat-tabs--mega {
+  gap: 0 4px;
+  row-gap: 0;
+  padding-bottom: 0;
+}
+.cat-tabs--mega .cat-tab {
+  font-size: 12px;
+  letter-spacing: .15em;
+  padding: 11px 16px;
+}
+.cat-tabs--mega .cat-tab::after { left: 10px; right: 10px; }
+
+.includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.includes-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--c-smoke);
+  font-size: .95rem;
+  line-height: 1.5;
+}
+.includes-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 6px; height: 6px;
+  background: var(--c-amber);
+  border-radius: 50%;
+}
+
+@media (max-width: 720px) {
+  .cat-tabs { gap: 0; }
+  .cat-tab { padding: 12px 14px; font-size: 12px; flex: 1 1 auto; text-align: center; }
+  .cat-tab::after { left: 6px; right: 6px; }
+  .cat-tabs--tiers .cat-tab { font-size: 1.05rem; padding: 10px 12px; min-width: 52px; }
+  .cat-tabs--mega .cat-tab { font-size: 11px; letter-spacing: .1em; padding: 10px 10px; flex: 0 1 auto; }
+}
 
 @media (max-width: 980px) {
   .menu-grid, .menu-grid--3 { grid-template-columns: 1fr; }

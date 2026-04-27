@@ -98,6 +98,19 @@
     });
   });
 
+  /* ---- Catering page tab groups (scoped per section) ---- */
+  document.querySelectorAll('.cat-tabs-group').forEach(group => {
+    const groupTabs = group.querySelectorAll('.cat-tab');
+    const groupPanels = group.querySelectorAll('.cat-tab-panel');
+    groupTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const id = tab.dataset.tab;
+        groupTabs.forEach(t => t.classList.toggle('is-active', t === tab));
+        groupPanels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === id));
+      });
+    });
+  });
+
   /* ---- Reveal on scroll ---- */
   const revealTargets = document.querySelectorAll(
     '.section-head, .special-card, .pkg, .addon-group, .schedule-card, .book-card, .contact-card, .about__text, .about__media, .stats'
